@@ -17,16 +17,15 @@ def pop_up(event):
     top.configure(background='black')
     top.geometry("500x500+500+300")
 
+    entry_frame = Frame(top, width=454, height=80,  highlightbackground="red", highlightcolor="red", bg="white",
+                        highlightthickness=1)
+    entry_frame.pack()
+
     l = Label(top, text="Input", fg="green", bg="black", font=('System', 18, "bold"))
     l.pack()
 
-    entryFrame = Frame(top, width=454, height=20)
-    entryFrame.pack()
-
-    box = Entry(top, fg="green", bg="black", font=('System', 18, "bold"),
-                borderwidth=5, highlightbackground="green", highlightcolor="green", highlightthickness=2)
-
-    box.grid(row=1, column=0, sticky="W")
+    box = Entry(entry_frame, fg="green", bg="black", font=('System', 18, "bold"))
+    box.pack()
 
 
 def read_input(event):
@@ -76,11 +75,11 @@ window.geometry("500x500")
 window.attributes("-fullscreen", True)
 window.title("MOTHER")
 
-frame1 = Frame(window, highlightbackground="green", highlightcolor="green", bg="green", highlightthickness=1, width=100,
+title_bar = Frame(window, highlightbackground="green", highlightcolor="green", bg="green", highlightthickness=1, width=100,
                height=100, bd=0)
-frame1.pack(anchor=W, fill=X)
+title_bar.pack(anchor=W, fill=X)
 
-title_label = Label(frame1, text="MU//TH//ER", fg="green", bg="black", font=('System', 18, "bold"))
+title_label = Label(title_bar, text="MU//TH//ER", fg="green", bg="black", font=('System', 18, "bold"))
 title_label.pack()
 
 label = Label(window, text="ENTER QUERY", fg="green", bg="black", font=('System', 18, "bold"))
